@@ -5,15 +5,20 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 ?
-
+function one ( x, y ) {
+... return x + y;
+...}
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
 ?
+var onemore = one(1, 3) + 5;
 
 // Qual o valor atualizado dessa variável?
 ?
+9
 
 // Declare uma nova variável, sem valor.
 ?
+var theone;
 
 /*
 Crie uma função que adicione um valor à variável criada acima, e retorne a string:
@@ -21,12 +26,18 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 ?
+function thetwo () {
+...theone = 10;
+...return 'o valor da variavel agora é' + theone;
+...}
 
 // Invoque a função criada acima.
 ?
+thetwo();
 
 // Qual o retorno da função? (Use comentários de bloco).
 ?
+/* o valor da variavel é 10*/
 
 /*
 Crie uma função com as seguintes características:
@@ -36,18 +47,28 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 ?
+function funcao(a, b, c) {
+...if (a === undefined || b === undefined || c === undefined) {
+...return 'Preencha todos os valores corretamente!';
+...}
+...return (a * b * c) + 2;
+...}
 
 // Invoque a função criada acima, passando só dois números como argumento.
 ?
+funcao(1, 2);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+//'Preencha todos os valores corretamente!'
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 ?
+funcao(1, 2, 3);
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
 ?
+//8
 
 /*
 Crie uma função com as seguintes características:
@@ -59,7 +80,23 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 ?
+function game(q, w, e) {
+...if (q !== undefined && w === undefined && e === undefined)
+...return q;
+...else if(q !== undefined && w !== undefined && e === undefined)
+...return q + w;
+...else if(q !== undefined && w !== undefined && e !== undefined)
+...return (q + w) / e;
+...else if(q === undefined && w === undefined && e === undefined)
+...return 'false';
+...else {
+.....return null;
+.....}
+...}
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
 ?
-```
+game(); //'false'
+game(1); //1
+game(1, 2); //3
+game(1, 2, 3); //1
